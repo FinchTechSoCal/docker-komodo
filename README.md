@@ -1,2 +1,17 @@
 # docker-komodo
 Komodo is a web app to provide structure for managing your servers, builds, deployments, and automated procedures.
+
+Use:
+
+1. Copy komodo/mongo.compose.yaml and komodo/compose.env to your host:
+```bash
+rm -fr ~/appdata/docker_files/komodo
+git clone https://github.com/FinchTechSoCal/docker-komodo.git ~/appdata/docker_files/komodo
+```
+
+2. Edit the variables in komodo/compose.env.
+
+3. Deploy using the command:
+```bash
+docker compose -p komodo -f ~/appdata/docker_files/komodo/mongo.compose.yaml --env-file ~/appdata/docker_files/komodo/compose.env up -d
+```

@@ -17,8 +17,10 @@ services:
     # ports:
     #   - 27017:27017
     volumes:
-      - mongo-data:/data/db
-      - mongo-config:/data/configdb
+      #- mongo-data:/data/db
+      #- mongo-config:/data/configdb
+      - ${LOCVOL1}mongo-data:/data/db
+      - ${LOCVOL1}mongo-config:/data/configdb
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${KOMODO_DB_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${KOMODO_DB_PASSWORD}
@@ -69,7 +71,15 @@ services:
       ## Default: /etc/komodo.
       - ${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}:${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}
 
-volumes:
+#volumes:
   # Mongo
-  mongo-data:
-  mongo-config:
+#  mongo-data:
+#  mongo-config:
+
+#
+networks:
+  default:
+    external: true
+    name: ${CONNET}
+
+# END
