@@ -16,7 +16,7 @@ services:
     environment:
       PERIPHERY_ROOT_DIRECTORY: ${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}
       ## Pass the same passkey as used by the Komodo Core connecting to this Periphery agent.
-      PERIPHERY_PASSKEYS: a_random_passkey
+      PERIPHERY_PASSKEYS: ${KOMODO_PASSKEY}
       ## Make server run over https
       PERIPHERY_SSL_ENABLED: true
       ## Specify whether to disable the terminals feature
