@@ -1,4 +1,6 @@
 # https://komo.do/docs/setup/connect-servers#install-the-periphery-agent---container
+# https://github.com/moghtech/komodo/blob/main/compose/periphery.compose.yaml
+
 ####################################
 # 🦎 KOMODO COMPOSE - PERIPHERY 🦎 #
 ####################################
@@ -43,3 +45,12 @@ services:
       - 8120:8120
     ## If you want to use a custom periphery config file, use command to pass it to periphery.
     # command: periphery --config-path ${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}/periphery.config.toml
+
+
+#
+networks:
+  default:
+    external: true
+    name: ${CONNET}
+
+# END

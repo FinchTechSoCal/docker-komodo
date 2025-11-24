@@ -19,8 +19,8 @@ services:
     volumes:
       #- mongo-data:/data/db
       #- mongo-config:/data/configdb
-      - ${LOCVOL1}mongo-data:/data/db
-      - ${LOCVOL1}mongo-config:/data/configdb
+      - ${MONGO_DATA_DIRECTORY:-/etc/komodo/mongo-data}:/data/db
+      - ${MONGO_CONFIG_DIRECTORY:-/etc/komodo/mongo-config}:/data/configdb
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${KOMODO_DB_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${KOMODO_DB_PASSWORD}
