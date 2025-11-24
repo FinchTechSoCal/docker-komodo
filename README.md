@@ -11,7 +11,14 @@ git clone https://github.com/FinchTechSoCal/docker-komodo.git ~/appdata/docker_f
 
 2. Edit the variables in komodo/compose.env.
 
-3. Deploy using the command:
+3. Deploy 1 of the 2 below:
+
+Full (core, periphery/agent, db):
 ```bash
 docker compose -p komodo -f ~/appdata/docker_files/komodo/mongo.compose.yaml --env-file ~/appdata/docker_files/komodo/compose.env up -d
+```
+
+Periphery (agent):
+```bash
+docker compose -p komodo -f ~/appdata/docker_files/komodo/periphery.compose.yaml --env-file ~/appdata/docker_files/komodo/compose.env up -d
 ```
